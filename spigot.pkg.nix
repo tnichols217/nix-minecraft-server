@@ -3,11 +3,12 @@
 pkgs.stdenv.mkDerivation rec {
   pname = "minecraft-server-builder";
   version = "v1.0.0";
+  nativeBuildInputs = [pkgs.git];
 
   src = spigotSrc;
 
   buildPhase = ''
-    ${pkgs.maven + "/bin/mvn"} clean install
+    ${pkgs.maven + "/bin/mvn"} --offline clean install
   '';
 
   installPhase =''
