@@ -8,14 +8,14 @@
   };
 
   outputs = { self, nixpkgs, flake-utils }: 
-  flake-utils.lib.eachDefaultSystem (system:
-    let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      packages = rec {
-        server = pkgs.callPackage ./server.pkg.nix {};
-      };
-    }
-  )
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        packages = rec {
+          server = pkgs.callPackage ./server.pkg.nix {};
+        };
+      }
+    );
 }
