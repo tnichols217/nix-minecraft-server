@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, ... }:
+{ pkgs ? import <nixpkgs> {}, nixpkgs, ... }:
 
 pkgs.stdenv.mkDerivation rec {
   pname = "minecraft-server-builder";
