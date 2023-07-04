@@ -25,7 +25,8 @@
         packages = rec {
           server = pkgs.callPackage ./server.pkg.nix { inherit nixpkgs; };
           config = pkgs.callPackage ./buildConfig.pkg.nix { inherit nixpkgs; };
-          default = config;
+          packed = pkgs.callPackage ./packConfig.pkg.nix { inherit nixpkgs; app = config; };
+          default = packed;
         };
         apps = rec {
           getMavenInputs = {

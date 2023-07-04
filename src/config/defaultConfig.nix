@@ -143,7 +143,7 @@
     };
     messages = {
       whitelist = "You are not whitelisted on this server!";
-      unknown-command = "Unknown command. Type "/help" for help.";
+      unknown-command = ''Unknown command. Type "/help" for help.'';
       server-full = "The server is full!";
       outdated-client = "Outdated client! Please use {0}";
       outdated-server = "Outdated server! I'm still on {0}";
@@ -272,7 +272,7 @@
     config-version = 12;
     stats = {
       disable-saving = false;
-      forced-stats = "{}";
+      forced-stats = {};
     };
   };
   usercache = [];
