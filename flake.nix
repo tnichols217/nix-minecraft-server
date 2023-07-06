@@ -26,7 +26,8 @@
           server = pkgs.callPackage ./server.pkg.nix { inherit nixpkgs; };
           config = pkgs.callPackage ./buildConfig.pkg.nix { inherit nixpkgs; };
           packed = pkgs.callPackage ./packConfig.pkg.nix { inherit nixpkgs; app = config; };
-          default = packed;
+          docker = pkgs.callPackage ./buildDocker.pkg.nix { inherit nixpkgs; app = packed; };
+          default = docker;
         };
         apps = rec {
           getMavenInputs = {

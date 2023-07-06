@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, nixpkgs, app, name ? "minecraft" ... }:
+{ pkgs ? import <nixpkgs> {}, nixpkgs, app, name ? "minecraft", ... }:
 
 pkgs.stdenv.mkDerivation rec {
   pname = "minecraft-server-config-packer";
@@ -10,7 +10,7 @@ pkgs.stdenv.mkDerivation rec {
 
   mkdir $out
   mkdir -p $out/bin/${name}
-  cp ${app}/* ${app}/.* $out/bin/${name} 
+  cp -r ${app}/* ${app}/.* $out/bin/${name} 
 
   '';
 
