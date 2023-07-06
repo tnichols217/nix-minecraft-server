@@ -7,7 +7,7 @@ pkgs.dockerTools.buildImage {
     pathsToLink = [ "/bin" ];
   };
   config = {
-    Cmd = [ "${pkgs.bash}/bin/bash" "${pkgs.callPackage ./src/start.sh.pkg.nix { inherit name; }}"];
+    Cmd = [ "${pkgs.bash}/bin/bash" "${pkgs.callPackage ./src/start.sh.pkg.nix { inherit name; }}/bin/run.sh" ];
     Volumes = { };
     WorkingDir = "/bin/${name}";
   };

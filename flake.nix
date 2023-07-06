@@ -34,7 +34,11 @@
             type = "app";
             program = pkgs.callPackage ./nix/scripts/getJar.nix { inherit mavenix system; repoDir = spig; };
           };
-          default = getMavenInputs;
+          buildRun = {
+            type = "app";
+            program = ./scripts/buildRun.sh;
+          };
+          default = buildRun;
         };
       }
     );
