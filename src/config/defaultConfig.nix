@@ -85,7 +85,7 @@
     "resource-pack-prompt" = "";
     "allow-nether" = true;
     "server-port" = 25565;
-    "enable-rcon" = false;
+    "enable-rcon" = true;
     "sync-chunk-writes" = true;
     "op-permission-level" = 4;
     "prevent-proxy-connections" = false;

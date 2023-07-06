@@ -1,4 +1,4 @@
 nix build
 ID=$(docker load < result \
 | awk '{ print $NF}')
-docker run --mount type=bind,source=$(pwd)/docker.env,target=/env/.env --mount type=bind,source=$(pwd)/out,target=/out $ID
+docker run --mount type=bind,source=$(pwd)/test,target=/mnt -p 25565:25565 -p 25575:25575 $ID
