@@ -26,9 +26,14 @@
       "disabledcommandhere"
     ];
     servers = {
-      lobby = {
+      survival = {
         motd = "Survival";
-        address = "localhost:25565";
+        address = "survival:25565";
+        restricted = false;
+      };
+      creative = {
+        motd = "Creative";
+        address = "creative:25565";
         restricted = false;
       };
     };
@@ -44,7 +49,8 @@
         };
         ping_passthrough = true;
         priorities = [
-          "lobby"
+          "survival"
+          "creative"
         ];
         bind_local_address = true;
         host = "0.0.0.0:25565";
@@ -53,7 +59,7 @@
         force_default_server = false;
       }
     ];
-    ip_forward = false;
+    ip_forward = true;
     remote_ping_timeout = 5000;
     prevent_proxy_connections = false;
     groups = {

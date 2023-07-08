@@ -58,7 +58,7 @@
     "enable-jmx-monitoring" = false;
     "rcon.port" = 25575;
     "level-seed" = 420;
-    "gamemode" = "survival";
+    "gamemode" = "creative";
     "enable-command-block" = false;
     "enable-query" = false;
     "generator-settings" = "{}";

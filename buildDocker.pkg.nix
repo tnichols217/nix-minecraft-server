@@ -3,7 +3,7 @@ pkgs.dockerTools.buildImage {
   inherit name;
   copyToRoot = pkgs.buildEnv {
     inherit name;
-    paths = [ app ];
+    paths = [ app pkgs.bash ];
     pathsToLink = [ "/bin" ];
   };
   config = {
