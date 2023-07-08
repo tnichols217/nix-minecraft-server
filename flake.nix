@@ -27,9 +27,12 @@
         packages = rec {
           server = pkgs.callPackage ./server.pkg.nix { inherit nixpkgs; };
           config = pkgs.callPackage ./buildConfig.pkg.nix { inherit nixpkgs; };
+          bungeeConfig = pkgs.callPackage ./buildBungeeConfig.pkg.nix { inherit nixpkgs; };
           packed = pkgs.callPackage ./packConfig.pkg.nix { inherit nixpkgs; app = config; };
+          packedBungee = pkgs.callPackage ./packConfig.pkg.nix { inherit nixpkgs; app = bungeeConfig; };
           docker = pkgs.callPackage ./buildDocker.pkg.nix { inherit nixpkgs; app = packed; };
-          default = docker;
+          dockerBungee = pkgs.callPackage ./buildDocker.pkg.nix { inherit nixpkgs; app = packed; startScript = ./src/bungeeStart.sh.pkg.nix; };
+          default = dockerBungee;
         };
         apps = rec {
           getSpigot = {

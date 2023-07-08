@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, nixpkgs, ... }:
+{ pkgs ? import <nixpkgs> {}, nixpkgs, configs ? import ./src/config/defaultConfig.nix, ... }:
 
 pkgs.stdenv.mkDerivation rec {
   pname = "minecrafterver-config-builder";
@@ -6,8 +6,7 @@ pkgs.stdenv.mkDerivation rec {
 
   src = ./src;
 
-  installPhase = let 
-    configs = import ./src/config/defaultConfig.nix;
+  installPhase = let
     makeJSONfile = str: builtins.toFile str (builtins.toJSON configs.${str});
     makeKeyfile = str: builtins.toFile str (pkgs.lib.generators.toKeyValue {} configs.${str});
   in
