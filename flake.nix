@@ -4,8 +4,9 @@
       url = git+https://hub.spigotmc.org/stash/scm/spigot/buildtools.git;
       flake = false;
     };
-    mvn2nix = {
-      url = "github:fzakaria/mvn2nix";
+    bungeecord = {
+      url = git+https://github.com/SpigotMC/BungeeCord;
+      flake = false;
     };
     mavenix = {
       url = "github:nix-community/mavenix";
@@ -15,11 +16,12 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils, spigot, mvn2nix, mavenix, ... }: 
+  outputs = { self, nixpkgs, flake-utils, spigot, mavenix, bungeecord, ... }: 
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
         spig = "${spigot}";
+        bungee = "${bungeecord}";
       in
       {
         packages = rec {
@@ -30,9 +32,13 @@
           default = docker;
         };
         apps = rec {
-          getMavenInputs = {
+          getSpigot = {
             type = "app";
-            program = pkgs.callPackage ./nix/scripts/getJar.nix { inherit mavenix system; repoDir = spig; };
+            program = pkgs.callPackage ./nix/scripts/getSpigot.nix { inherit mavenix system; repoDir = spig; };
+          };
+          getBungeeCord = {
+            type = "app";
+            program = pkgs.callPackage ./nix/scripts/getBungee.nix { inherit mavenix system; repoDir = bungee; };
           };
           buildRun = {
             type = "app";
