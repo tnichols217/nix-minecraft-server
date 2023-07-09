@@ -62,6 +62,7 @@
         };
         overlays = self: super: {
             arion = import ./arion-wrapper.pkg.nix { pkgs = super; inherit self; };
+            docker-compose = import ./podman-compose-wrapper.pkg.nix { pkgs = super; inherit self; };
           };
       }
     ));
