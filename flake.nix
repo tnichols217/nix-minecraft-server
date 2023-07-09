@@ -26,6 +26,9 @@
       in
       {
         packages = rec {
+          arionWrapped = pkgs.callPackage ./arion-wrapper.pkg.nix {};
+
+
           server = pkgs.callPackage ./server.pkg.nix { inherit nixpkgs; };
 
           configBungee = pkgs.callPackage ./buildBungeeConfig.pkg.nix { inherit nixpkgs; };
