@@ -9,6 +9,8 @@
       default = [
         "bungeecord.command.server"
         "bungeecord.command.list"
+        "slashserver.server.survival"
+        "slashserver.server.creative"
       ];
       admin = [
         "bungeecord.command.alert"
@@ -26,11 +28,11 @@
       # "disabledcommandhere"
     ];
     servers = {
-      # survival = {
-      #   motd = "Survival";
-      #   address = "survival:25565";
-      #   restricted = false;
-      # };
+      survival = {
+        motd = "Survival";
+        address = "survival:25565";
+        restricted = false;
+      };
       creative = {
         motd = "Creative";
         address = "creative:25565";
@@ -49,7 +51,7 @@
         };
         ping_passthrough = true;
         priorities = [
-          # "survival"
+          "survival"
           "creative"
         ];
         bind_local_address = true;
@@ -74,14 +76,14 @@
   };
   slashserver = {
     servers = [
-      # {
-      #   server = "survival";
-      #   commands = [
-      #     "survival"
-      #     "main"
-      #   ];
-      #   "permission" = "slashserver.server.survival";
-      # }
+      {
+        server = "survival";
+        commands = [
+          "survival"
+          "main"
+        ];
+        "permission" = "slashserver.server.survival";
+      }
       {
         server = "creative";
         commands = [

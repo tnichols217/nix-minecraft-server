@@ -37,7 +37,7 @@
           
           configCreative = pkgs.callPackage ./buildConfig.pkg.nix { inherit nixpkgs; configs = import ./src/config/creativeConfig.nix; };
           packedCreative = pkgs.callPackage ./packConfig.pkg.nix { inherit nixpkgs; app = configCreative; name = "creative"; };
-          dockerCreative = pkgs.callPackage ./buildDocker.pkg.nix { inherit packedCreative; app = packed; name = "creative"; };
+          dockerCreative = pkgs.callPackage ./buildDocker.pkg.nix { inherit nixpkgs; app = packedCreative; name = "creative"; };
           
           default = dockerBungee;
         };
@@ -56,6 +56,7 @@
           };
           default = runArion;
         };
+        arion-module = ./arion-compose.nix;
       }
     );
 }
