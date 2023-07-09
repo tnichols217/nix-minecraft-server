@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, self ? import <nixpkgs> {}, lib, ... }:
+{ pkgs ? import <nixpkgs> {}, self ? import <nixpkgs> {}, ... }:
 
 pkgs.stdenv.mkDerivation rec {
   pname = "podman-compose-wrapper";
@@ -17,7 +17,7 @@ pkgs.stdenv.mkDerivation rec {
 
   makeWrapper ${arion}/libexec/arion $out/bin/arion \
         --unset PYTHONPATH \
-        --prefix PATH : ${lib.makeBinPath [ podman ]} \
+        --prefix PATH : ${pkgs.lib.makeBinPath [ podman ]} \
         ;
 
   '';
