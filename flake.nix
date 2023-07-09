@@ -61,6 +61,6 @@
     ));
   in
     sysOut // {
-      arion-module = import ./arion-compose.nix { flake = sysOut.packages.x86_64-linux; };
+      arion-module = import ./arion-config.nix { flake = sysOut.packages.x86_64-linux; };
     };
 }
