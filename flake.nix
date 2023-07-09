@@ -59,5 +59,5 @@
       }
     )) // {
       arion-module = ./arion-compose.nix;
-    }
+    };
 }
