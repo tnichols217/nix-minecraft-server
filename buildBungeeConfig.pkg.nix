@@ -15,6 +15,10 @@ pkgs.stdenv.mkDerivation rec {
 
   cp  ${makeJSONfile "config"} $out/config.yml
   cp BungeeCord.jar $out/server.jar
+  mkdir -p $out/plugins/SlashServer
+  cp ${makeJSONfile "slashserver"} $out/plugins/SlashServer/config.yml
+  mkdir -p $out/plugins
+  cp BungeePlugins/* $out/plugins
 
   '';
 

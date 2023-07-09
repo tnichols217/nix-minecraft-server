@@ -14,6 +14,8 @@ upsearch () {
 
 upsearch flake.nix
 
-${pkgs.arion}/bin/arion up -d
+${pkgs.arion}/bin/arion build
+${pkgs.arion}/bin/arion config > docker-compose.yml
+${pkgs.podman-compose}/bin/podman-compose up -d
 
-'')}/bin/getJar.sh"
+'')}/bin/runArion.sh"

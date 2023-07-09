@@ -117,7 +117,7 @@
     settings = {
       debug = false;
       sample-count = 12;
-      bungeecord = false;
+      bungeecord = true;
       player-shuffle = 0;
       user-cache-size = 1000;
       save-user-cache-on-stop-only = false;

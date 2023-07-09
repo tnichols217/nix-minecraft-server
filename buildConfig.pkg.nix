@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {}, nixpkgs, configs ? import ./src/config/defaultConfig.nix, ... }:
 
 pkgs.stdenv.mkDerivation rec {
-  pname = "minecrafterver-config-builder";
+  pname = "minecraft-server-config-builder";
   version = "v1.0.0";
 
   src = ./src;

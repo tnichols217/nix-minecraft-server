@@ -21,16 +21,16 @@
     timeout = 30000;
     log_commands = false;
     network_compression_threshold = 256;
-    online_mode = true;
+    online_mode = false;
     disabled_commands = [
-      "disabledcommandhere"
+      # "disabledcommandhere"
     ];
     servers = {
-      survival = {
-        motd = "Survival";
-        address = "survival:25565";
-        restricted = false;
-      };
+      # survival = {
+      #   motd = "Survival";
+      #   address = "survival:25565";
+      #   restricted = false;
+      # };
       creative = {
         motd = "Creative";
         address = "creative:25565";
@@ -49,7 +49,7 @@
         };
         ping_passthrough = true;
         priorities = [
-          "survival"
+          # "survival"
           "creative"
         ];
         bind_local_address = true;
@@ -63,13 +63,32 @@
     remote_ping_timeout = 5000;
     prevent_proxy_connections = false;
     groups = {
-      # md_5 = [
-      #   "admin"
-      # ];
+      tev99 = [
+        "admin"
+      ];
     };
     connection_throttle = 4000;
     stats = "9a75ded2-2895-4211-b315-d8ed24d826ce";
     connection_throttle_limit = 3;
     log_pings = true;
+  };
+  slashserver = {
+    servers = [
+      # {
+      #   server = "survival";
+      #   commands = [
+      #     "survival"
+      #     "main"
+      #   ];
+      #   "permission" = "slashserver.server.survival";
+      # }
+      {
+        server = "creative";
+        commands = [
+          "creative"
+        ];
+        "permission" = "slashserver.server.creative";
+      }
+    ];
   };
 }
