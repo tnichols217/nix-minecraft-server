@@ -17,7 +17,8 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, spigot, mavenix, bungeecord, ... }: 
-    (flake-utils.lib.eachDefaultSystem (system:
+  let
+    sysOut = (flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
         spig = "${spigot}";
@@ -57,7 +58,9 @@
           default = runArion;
         };
       }
-    )) // {
-      arion-module = ./arion-compose.nix;
+    ));
+  in
+    sysOut // {
+      arion-module = import ./arion-compose.nix { flake = sysOut.packages.x86_64-linux; };
     };
 }
