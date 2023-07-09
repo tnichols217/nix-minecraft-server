@@ -10,7 +10,7 @@ pkgs.stdenv.mkDerivation rec {
 
   postFixup = let
     arion = "${pkgs.arion}";
-    podman = pkgs.callPackage ./podman-compose-wrapper.pkg.nix { inherit super; };
+    podman = pkgs.callPackage ./podman-compose-wrapper.pkg.nix { inherit self; };
   in ''
 
   mkdir -p $out/bin
