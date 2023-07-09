@@ -1,18 +1,23 @@
-{ pkgs ? import <nixpkgs> {}, ... }:
+{ pkgs ? import <nixpkgs> {}, self ? import <nixpkgs> {}, lib, ... }:
 
 pkgs.stdenv.mkDerivation rec {
   pname = "podman-compose-wrapper";
   version = "v1.0.0";
+  nativeBuildInputs = [ pkgs.makeWrapper ];
+
 
   src = ./.;
 
-  installPhase = ''
+  postFixup = let
+    arion = "${pkgs.arion}";
+    podman = pkgs.callPackage ./podman-compose-wrapper.pkg.nix { inherit super; };
+  in ''
 
   mkdir -p $out/bin
 
-  makeWrapper ${pkgs.arion}/libexec/arion $out/bin/arion \
+  makeWrapper ${arion}/libexec/arion $out/bin/arion \
         --unset PYTHONPATH \
-        --prefix PATH : ${lib.makeBinPath [ pkgs.callPackage ./podman-compose-wrapper.pkg.nix {} ]} \
+        --prefix PATH : ${lib.makeBinPath [ podman ]} \
         ;
 
   '';

@@ -60,6 +60,12 @@
           };
           default = runArion;
         };
+        overlays = rec {
+          arion-patch = self: super: {
+            arion = import ./arion-wrapper.pkg.nix { pkgs = super; inherit self; };
+          };
+          default = arion-patch;
+        };
       }
     ));
   in

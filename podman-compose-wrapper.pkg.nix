@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, ... }:
+{ pkgs ? import <nixpkgs> {}, self ? import <nixpkgs> {}, ... }:
 
 pkgs.stdenv.mkDerivation rec {
   pname = "podman-compose-wrapper";
@@ -6,11 +6,13 @@ pkgs.stdenv.mkDerivation rec {
 
   src = ./.;
 
-  installPhase = ''
+  installPhase = let
+    pod = "${self.podman-compose}";
+  in ''
 
-  mkdir $out
+  mkdir -p $out/bin
 
-  ln -s ${pkgs.podman-compose}/bin/podman-compose $out/bin/docker-compose
+  ln -s ${pod}/bin/podman-compose $out/bin/docker-compose
 
   '';
 
