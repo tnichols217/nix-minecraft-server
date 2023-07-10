@@ -38,9 +38,25 @@
     };
   };
 } // {
-  docker-compose = let
-    val = lib.mkForce {
-      world-data = {};
+  docker-compose = if isCompose then 
+  {
+    raw.volumes = lib.mkForce {
+      world-data = {
+
+      };
     };
-  in if isCompose then { raw.volumes = val; } else { volumes = val; };
+  }
+  else
+  {
+    volumes = lib.mkForce {
+      world-data = {
+        driver = "local";
+        driver_opts = {
+          type = "none";
+          o = "bind";
+          device = "/var/lib/container-storage/volumes/minecraft/";
+        };
+      };
+    };
+  };
 }
