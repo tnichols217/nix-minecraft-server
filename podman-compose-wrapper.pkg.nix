@@ -8,12 +8,16 @@ pkgs.stdenv.mkDerivation rec {
 
   installPhase = let
     pod = "${self.podman-compose}";
+    podman = "${self.podman}";
   in ''
 
   mkdir -p $out/bin
 
   ln -s ${pod}/bin/podman-compose $out/bin/docker-compose
 
+  makeWrapper ${pod}/bin/podman-compose $out/bin/docker-compose \
+        --prefix PATH : ${pkgs.lib.makeBinPath [ podman ]} \
+        ;
   '';
 
   meta = {
