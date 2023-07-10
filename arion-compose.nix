@@ -1,1 +1,1 @@
-import ./arion-config.nix {}
+import ./arion-config.nix { isCompose = true; }

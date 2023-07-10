@@ -1,4 +1,4 @@
-{ flake ? (builtins.getFlake (toString ./.)).packages.x86_64-linux, ... }:
+{ flake ? (builtins.getFlake (toString ./.)).packages.x86_64-linux, isCompose ? false, ... }:
 { lib, ... }:
 {
   project.name = "minecraft";
@@ -37,4 +37,10 @@
       build.image = lib.mkForce (flake.dockerBungee);
     };
   };
+} // {
+  docker-compose = let
+    val = lib.mkForce {
+      world-data = {};
+    };
+  in if isCompose then { raw.volumes = val; } else { volumes = val; };
 }
