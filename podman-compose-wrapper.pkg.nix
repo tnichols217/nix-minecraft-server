@@ -3,6 +3,7 @@
 pkgs.stdenv.mkDerivation rec {
   pname = "podman-compose-wrapper";
   version = "v1.0.0";
+  nativeBuildInputs = [ pkgs.makeWrapper ];
 
   src = ./.;
 
