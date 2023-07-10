@@ -26,9 +26,6 @@
       in
       {
         packages = rec {
-          arionWrapped = pkgs.callPackage ./arion-wrapper.pkg.nix {};
-
-
           server = pkgs.callPackage ./server.pkg.nix { inherit nixpkgs; };
 
           configBungee = pkgs.callPackage ./buildBungeeConfig.pkg.nix { inherit nixpkgs; };
@@ -63,6 +60,7 @@
         overlays = self: super: {
             arion = import ./arion-wrapper.pkg.nix { pkgs = super; inherit self; };
             docker-compose = import ./podman-compose-wrapper.pkg.nix { pkgs = super; inherit self; };
+            docker = import ./podman-wrapper.pkg.nix { pkgs = super; inherit self; };
           };
       }
     ));
