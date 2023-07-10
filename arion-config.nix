@@ -2,10 +2,8 @@
 { lib, ... }:
 {
   project.name = "minecraft";
-  docker-compose.raw = {
-    volumes = {
-      world-data = {};
-    };
+  docker-compose.raw.volumes = lib.mkForce {
+    world-data = {};
   };
   services = {
     survival = {
