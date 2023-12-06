@@ -2,6 +2,14 @@
   root = "/mnt/${name}";
 in pkgs.writeShellScriptBin "run.sh" ''
 
+_term() { 
+  echo "Caught SIGTERM signal!" 
+  ${pkgs.coreutils}/bin/kill -TERM "$child" 2>/dev/null
+}
+
+trap _term SIGTERM
+trap _term SIGINT
+
 ${pkgs.coreutils}/bin/mkdir -p ${root}/world_nether ${root}/world_the_end
 ${pkgs.coreutils}/bin/ln -s ${root}/world_nether ${root}/world_the_end /bin/${name}/
 
@@ -11,5 +19,8 @@ ${pkgs.coreutils}/bin/mkdir -p ${root}/world/advancements ${root}/world/data ${r
 ${pkgs.coreutils}/bin/ln -s ${root}/world/advancements ${root}/world/data ${root}/world/entities ${root}/world/playerdata ${root}/world/poi ${root}/world/region ${root}/world/stats ${root}/world/level.dat ${root}/world/uid.dat /bin/${name}/world
 
 ${pkgs.jdk17}/bin/java -Djava.awt.headless=true -Xmx${ram} -Xms${ram} -jar /bin/${name}/server.jar
+
+child=$! 
+wait "$child"
 
 ''
