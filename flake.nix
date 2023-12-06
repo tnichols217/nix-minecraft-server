@@ -51,6 +51,10 @@
             type = "app";
             program = pkgs.callPackage ./nix/scripts/getBungee.nix { inherit mavenix system; repoDir = bungee; };
           };
+          updateJars = {
+            type = "app";
+            program = pkgs.callPackage ./nix/scripts/updateJars.nix { };
+          };
           runArion = {
             type = "app";
             program = pkgs.callPackage ./nix/scripts/runArion.nix { };
