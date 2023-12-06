@@ -3,8 +3,7 @@
 in pkgs.writeShellScriptBin "run.sh" ''
 
 _term() { 
-  echo "Caught SIGTERM signal!" 
-  ${pkgs.coreutils}/bin/kill -TERM "$child" 2>/dev/null
+  ${pkgs.coreutils}/bin/kill -TERM "$child" >/dev/null
 }
 
 trap _term SIGTERM
@@ -18,7 +17,7 @@ ${pkgs.coreutils}/bin/mkdir -p ${root}/world/advancements ${root}/world/data ${r
 
 ${pkgs.coreutils}/bin/ln -s ${root}/world/advancements ${root}/world/data ${root}/world/entities ${root}/world/playerdata ${root}/world/poi ${root}/world/region ${root}/world/stats ${root}/world/level.dat ${root}/world/uid.dat /bin/${name}/world
 
-${pkgs.jdk17}/bin/java -Djava.awt.headless=true -Xmx${ram} -Xms${ram} -jar /bin/${name}/server.jar
+${pkgs.jdk17}/bin/java -Djava.awt.headless=true -Xmx${ram} -Xms${ram} -jar /bin/${name}/server.jar &
 
 child=$! 
 wait "$child"
