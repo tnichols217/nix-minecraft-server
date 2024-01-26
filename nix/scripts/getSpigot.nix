@@ -21,6 +21,7 @@ cd ${repoDir}
 cp -r * .* $tt
 cd $tt
 pwd
+chmod -R 755 *
 ${mavenix.packages.${system}.mavenix-cli}/bin/mvnix-init
 ${mavenix.packages.${system}.mavenix-cli}/bin/mvnix-update
 nix-build

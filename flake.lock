@@ -3,11 +3,11 @@
     "bungeecord": {
       "flake": false,
       "locked": {
-        "lastModified": 1688551103,
-        "narHash": "sha256-ngkOwqcN4OTDhNRQchP42RJzZNWgtDhbzwQ6/KSfjyo=",
+        "lastModified": 1705700517,
+        "narHash": "sha256-i4KU6okU2rgqqsuQ9MYaM4BLWjqVISUMge+ocFCYnsM=",
         "ref": "refs/heads/master",
-        "rev": "9f5ace9025cc28d4d1f43e0a1cd4fddd6505c4dc",
-        "revCount": 1900,
+        "rev": "a1cd694363a4adbd4dcf8c7f8680cb6faf16cf50",
+        "revCount": 1974,
         "type": "git",
         "url": "https://github.com/SpigotMC/BungeeCord"
       },

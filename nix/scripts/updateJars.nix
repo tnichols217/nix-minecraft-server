@@ -1,4 +1,4 @@
-{ pkgs, repoDir, system, mavenix, ... }: "${(pkgs.writeShellScriptBin "getJar.sh" ''
+{ pkgs, ... }: "${(pkgs.writeShellScriptBin "getJar.sh" ''
 
 #!/usr/bin/env bash
 
