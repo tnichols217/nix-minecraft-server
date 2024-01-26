@@ -21,11 +21,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1687709756,
-        "narHash": "sha256-Y5wKlQSkgEK2weWdOu4J3riRd+kV/VCgHsqLNTTWQ/0=",
+        "lastModified": 1705309234,
+        "narHash": "sha256-uNRRNRKmJyCRC/8y1RqBkqWBLM034y4qN7EprSdmgyA=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "dbabf0ca0c0c4bce6ea5eaf65af5cb694d2082c7",
+        "rev": "1ef2e671c3b0c19053962c07dbda38332dcebf26",
         "type": "github"
       },
       "original": {
@@ -69,11 +69,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1687977148,
-        "narHash": "sha256-gUcXiU2GgjYIc65GOIemdBJZ+lkQxuyIh7OkR9j0gCo=",
+        "lastModified": 1706006310,
+        "narHash": "sha256-nDPz0fj0IFcDhSTlXBU2aixcnGs2Jm4Zcuoj0QtmiXQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "60a783e00517fce85c42c8c53fe0ed05ded5b2a4",
+        "rev": "b43bb235efeab5324c5e486882ef46749188eee2",
         "type": "github"
       },
       "original": {
@@ -95,11 +95,11 @@
     "spigot": {
       "flake": false,
       "locked": {
-        "lastModified": 1687164037,
-        "narHash": "sha256-EO/wfsn1t8nc26x1kJaJwudCV/hN+k9ORCYnYgldSNs=",
+        "lastModified": 1705394401,
+        "narHash": "sha256-thq3QYy+pR3u5fDcGs5kDZmMoGFvbSp86dejsj+HZ5I=",
         "ref": "refs/heads/master",
-        "rev": "2836244c7570cce607f5b5d124bdc7b4f28aa0ee",
-        "revCount": 155,
+        "rev": "eced56f204df982a16d7be02b2f2bbad626d9851",
+        "revCount": 163,
         "type": "git",
         "url": "https://hub.spigotmc.org/stash/scm/spigot/buildtools.git"
       },
