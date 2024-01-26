@@ -11,6 +11,7 @@
         "bungeecord.command.list"
         "slashserver.server.survival"
         "slashserver.server.creative"
+        "slashserver.server.csds"
       ];
       admin = [
         "bungeecord.command.alert"
@@ -38,6 +39,11 @@
         address = "creative:25565";
         restricted = false;
       };
+      csds = {
+        motd = "CSDS 281";
+        address = "csds:25565";
+        restricted = false;
+      };
     };
     listeners = [
       {
@@ -53,6 +59,7 @@
         priorities = [
           "survival"
           "creative"
+          "csds"
         ];
         bind_local_address = true;
         host = "0.0.0.0:25565";
@@ -90,6 +97,13 @@
           "creative"
         ];
         "permission" = "slashserver.server.creative";
+      }
+      {
+        server = "csds";
+        commands = [
+          "csds"
+        ];
+        "permission" = "slashserver.server.csds";
       }
     ];
   };

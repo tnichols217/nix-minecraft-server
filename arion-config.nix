@@ -28,9 +28,20 @@
       };
       build.image = lib.mkForce (flake.dockerCreative);
     };
+    csds = {
+      service = {
+        depends_on = [];
+        expose = ["25565"];
+        restart = "unless-stopped";
+        volumes = [
+          "world-data:/mnt"
+        ];
+      };
+      build.image = lib.mkForce (flake.dockerCSDS);
+    };
     bungee = {
       service = {
-        depends_on = [ "survival" "creative" ];
+        depends_on = [ "survival" "creative" "csds" ];
         ports = ["25565:25565"];
         restart = "unless-stopped";
       };

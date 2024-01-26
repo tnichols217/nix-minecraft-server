@@ -40,6 +40,10 @@
           packedCreative = pkgs.callPackage ./packConfig.pkg.nix { inherit nixpkgs; app = configCreative; name = "creative"; };
           dockerCreative = pkgs.callPackage ./buildDocker.pkg.nix { inherit nixpkgs; app = packedCreative; name = "creative"; };
           
+          configCSDS = pkgs.callPackage ./buildConfig.pkg.nix { inherit nixpkgs; configs = import ./src/config/csdsConfig.nix; };
+          packedCSDS = pkgs.callPackage ./packConfig.pkg.nix { inherit nixpkgs; app = configCSDS; name = "CSDS"; };
+          dockerCSDS = pkgs.callPackage ./buildDocker.pkg.nix { inherit nixpkgs; app = packedCSDS; name = "CSDS"; };
+          
           default = dockerBungee;
         };
         apps = rec {
