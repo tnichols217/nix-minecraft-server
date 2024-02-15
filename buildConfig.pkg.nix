@@ -26,7 +26,8 @@ pkgs.stdenv.mkDerivation rec {
   cp  ${makeJSONfile "spigot"} $out/spigot.yml
   cp  ${makeJSONfile "usercache"} $out/usercache.json
   cp  ${makeJSONfile "whitelist"} $out/whitelist.json
-  echo "[regex].*\n/mnt" > $out/allowed_symlinks.txt
+  echo "[regex].*" > $out/allowed_symlinks.txt
+  echo "/mnt" >> $out/allowed_symlinks.txt
   cp server.jar $out/server.jar
   mkdir -p $out/world/datapacks
   cp datapacks/* $out/world/datapacks

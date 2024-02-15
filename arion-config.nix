@@ -49,7 +49,8 @@
     };
   };
 } // {
-  docker-compose = if isCompose then 
+  # docker-compose = if isCompose then 
+  docker-compose = if false then 
   {
     raw.volumes = lib.mkForce {
       world-data = {
