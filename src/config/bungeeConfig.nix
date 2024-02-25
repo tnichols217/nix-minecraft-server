@@ -12,6 +12,7 @@
         "slashserver.server.survival"
         "slashserver.server.creative"
         "slashserver.server.csds"
+        "slashserver.server.sil"
       ];
       admin = [
         "bungeecord.command.alert"
@@ -44,6 +45,11 @@
         address = "csds:25565";
         restricted = false;
       };
+      silas = {
+        motd = "Silas";
+        address = "silas:25565";
+        restricted = false;
+      };
     };
     listeners = [
       {
@@ -60,6 +66,7 @@
           "survival"
           "creative"
           "csds"
+          "sil"
         ];
         bind_local_address = true;
         host = "0.0.0.0:25565";
@@ -104,6 +111,13 @@
           "csds"
         ];
         "permission" = "slashserver.server.csds";
+      }
+      {
+        server = "silas";
+        commands = [
+          "sil"
+        ];
+        "permission" = "slashserver.server.sil";
       }
     ];
   };
