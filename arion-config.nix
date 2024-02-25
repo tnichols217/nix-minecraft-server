@@ -39,6 +39,17 @@
       };
       build.image = lib.mkForce (flake.dockerCSDS);
     };
+    silas = {
+      service = {
+        depends_on = [];
+        expose = ["25565"];
+        restart = "unless-stopped";
+        volumes = [
+          "world-data:/mnt"
+        ];
+      };
+      build.image = lib.mkForce (flake.dockerSilas);
+    };
     bungee = {
       service = {
         depends_on = [ "survival" "creative" "csds" ];
