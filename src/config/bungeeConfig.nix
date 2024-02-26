@@ -45,9 +45,9 @@
         address = "csds:25565";
         restricted = false;
       };
-      silas = {
+      sil = {
         motd = "Silas";
-        address = "silas:25565";
+        address = "sil:25565";
         restricted = false;
       };
     };
@@ -113,7 +113,7 @@
         "permission" = "slashserver.server.csds";
       }
       {
-        server = "silas";
+        server = "sil";
         commands = [
           "sil"
         ];

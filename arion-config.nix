@@ -39,7 +39,7 @@
       };
       build.image = lib.mkForce (flake.dockerCSDS);
     };
-    silas = {
+    sil = {
       service = {
         depends_on = [];
         expose = ["25565"];
