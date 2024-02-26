@@ -45,8 +45,8 @@
           dockerCSDS = pkgs.callPackage ./buildDocker.pkg.nix { inherit nixpkgs; app = packedCSDS; name = "CSDS"; };
           
           configSilas = pkgs.callPackage ./buildConfig.pkg.nix { inherit nixpkgs; configs = import ./src/config/silasConfig.nix; };
-          packedSilas = pkgs.callPackage ./packConfig.pkg.nix { inherit nixpkgs; app = configCSDS; name = "Silas"; };
-          dockerSilas = pkgs.callPackage ./buildDocker.pkg.nix { inherit nixpkgs; app = packedCSDS; name = "Silas"; };
+          packedSilas = pkgs.callPackage ./packConfig.pkg.nix { inherit nixpkgs; app = configSilas; name = "sil"; };
+          dockerSilas = pkgs.callPackage ./buildDocker.pkg.nix { inherit nixpkgs; app = packedSilas; name = "sil"; };
           
           default = dockerBungee;
         };

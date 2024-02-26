@@ -52,7 +52,7 @@
     };
     bungee = {
       service = {
-        depends_on = [ "survival" "creative" "csds" ];
+        depends_on = [ "survival" "creative" "csds" "sil" ];
         ports = ["25565:25565"];
         restart = "unless-stopped";
       };
