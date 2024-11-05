@@ -63,9 +63,9 @@
         };
         ping_passthrough = true;
         priorities = [
+          "csds"
           "survival"
           "creative"
-          "csds"
           "sil"
         ];
         bind_local_address = true;
