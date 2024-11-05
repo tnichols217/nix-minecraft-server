@@ -22,10 +22,8 @@ cp -r * .* $tt
 cd $tt
 pwd
 chmod -R 755 *
-${mavenix.packages.${system}.mavenix-cli}/bin/mvnix-init
-${mavenix.packages.${system}.mavenix-cli}/bin/mvnix-update
-nix-build
-${pkgs.jdk17}/bin/java -jar result/share/java/BuildTools.jar
+${pkgs.maven}/bin/mvn package
+${pkgs.jdk23}/bin/java -jar target/BuildTools.jar
 rm -f $origin/src/server.jar
 cp spigot*.jar $origin/src
 cd $origin/src
