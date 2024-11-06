@@ -79,7 +79,7 @@
     remote_ping_timeout = 5000;
     prevent_proxy_connections = false;
     groups = {
-      tev99 = [
+      LickORingDing = [
         "admin"
       ];
     };
