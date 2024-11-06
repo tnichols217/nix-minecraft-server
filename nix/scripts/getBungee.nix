@@ -22,11 +22,9 @@ cp -r * .* $tt
 cd $tt
 pwd
 chmod -R 755 *
-${mavenix.packages.${system}.mavenix-cli}/bin/mvnix-init
-${mavenix.packages.${system}.mavenix-cli}/bin/mvnix-update
-nix-build
+${pkgs.maven}/bin/mvn package
 
 rm -f $origin/src/BungeeCord.jar
-cp result/share/java/BungeeCord.jar $origin/src
+cp bootstrap/target/BungeeCord.jar $origin/src
 
 '')}/bin/getJar.sh"
