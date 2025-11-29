@@ -3,11 +3,11 @@
     "bungeecord": {
       "flake": false,
       "locked": {
-        "lastModified": 1729610100,
-        "narHash": "sha256-FXVh1c0nkdEAs4kJ6gsIH3bkZZny468p/ACmYO7cLko=",
+        "lastModified": 1763763833,
+        "narHash": "sha256-vLOSrlCy4f1cYsCbEiIpKQstFjgfM4wj+lUUmzngqg8=",
         "ref": "refs/heads/master",
-        "rev": "4886c4be017761333dc67b9c300acc7481354a7d",
-        "revCount": 2071,
+        "rev": "3929ac422c18673578a229002e3da828907ef945",
+        "revCount": 2219,
         "type": "git",
         "url": "https://github.com/SpigotMC/BungeeCord"
       },
@@ -21,11 +21,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1726560853,
-        "narHash": "sha256-X6rJYSESBVr3hBoH0WbKE5KvhPU5bloyZ2L4K60/fPQ=",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "c1dfcf08411b08f6b8615f7d8971a2bfa81d5e8a",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
@@ -69,11 +69,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1730831018,
-        "narHash": "sha256-2S0HwIFRxYp+afuoFORcZA9TjryAf512GmE0MTfEOPU=",
+        "lastModified": 1764384123,
+        "narHash": "sha256-UoliURDJFaOolycBZYrjzd9Cc66zULEyHqGFH3QHEq0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "8c4dc69b9732f6bbe826b5fbb32184987520ff26",
+        "rev": "59b6c96beacc898566c9be1052ae806f3835f87d",
         "type": "github"
       },
       "original": {
@@ -95,11 +95,11 @@
     "spigot": {
       "flake": false,
       "locked": {
-        "lastModified": 1729974302,
-        "narHash": "sha256-sMwV/N31ISbQDZnuBxcEl9VjX3pZce5o/SF5Tnz0/pc=",
+        "lastModified": 1761554844,
+        "narHash": "sha256-SEDcuwI4wkDeA/W3z+PXCKtrWeNmO45LpCRNn55A+bs=",
         "ref": "refs/heads/master",
-        "rev": "f901b6f52a44407c6e3311be8bec2abc9cc59c06",
-        "revCount": 180,
+        "rev": "c4a8e0b32cd19b171c2d7d3ec838fd4e16ffe2ca",
+        "revCount": 188,
         "type": "git",
         "url": "https://hub.spigotmc.org/stash/scm/spigot/buildtools.git"
       },
